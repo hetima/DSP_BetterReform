@@ -165,6 +165,10 @@ namespace BetterReformMod
             UIButton reformColorSelectBtn = buildMenu.reformColorSelectBtn;
             if (reformColorSelectBtn != null)
             {
+                //reformTypeButton1._isPointerEnter の状態によって SetActive されるので切り離す 0.9.25.11985
+                GameObject dummy = GameObject.Instantiate(reformColorSelectBtn.gameObject, reformColorSelectBtn.transform.parent);
+                buildMenu.reformColorSelectBtn = dummy.GetComponent<UIButton>();
+
                 //GameObject go = GameObject.Instantiate(reformColorSelectBtn.gameObject, reformGroup.transform);
                 //go.name = "colorSelectBtn";
                 //RectTransform rect = go.transform as RectTransform;
@@ -176,7 +180,7 @@ namespace BetterReformMod
                 //win.reformColorImage = go.transform.Find("col-select").GetComponent<Image>();
                 //go.SetActive(true);
 
-                RectTransform rect = buildMenu.reformColorSelectBtn.transform as RectTransform;
+                RectTransform rect = reformColorSelectBtn.transform as RectTransform;
                 rect.sizeDelta = new Vector2(36f, 36f);
                 SetPosition_(rect as RectTransform, 40f);
                 reformColorSelectBtn.tips.delay = 0.6f;
