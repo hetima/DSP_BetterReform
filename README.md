@@ -22,7 +22,9 @@ This mod makes Surface Formation Mode more convenient and easier to use.
 
 ## Release Notes
 
-### v1.0.0
+### v1.0.1
+- Support 0.9.25.11985 game version
 
+### v1.0.0
 - Initial Release
 
