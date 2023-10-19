@@ -302,7 +302,18 @@ namespace BetterReformMod
             BuildTool_Reform reformTool = GameMain.mainPlayer?.controller.actionBuild.reformTool;
             if (reformTool != null && obj > 0)
             {
-                reformTool.brushSize = obj * 2;
+                if (obj == 1)
+                {
+                    reformTool.brushSize = 5;
+                }
+                else
+                {
+                    reformTool.brushSize = obj * 2;
+                }
+                if (BetterReform.maxStampSize < reformTool.brushSize)
+                {
+                    reformTool.brushSize = BetterReform.maxStampSize;
+                }
                 BetterReform.HoldFoundationInHands();
             }
         }
