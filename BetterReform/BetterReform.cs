@@ -13,7 +13,7 @@ using UnityEngine.UI;
 namespace BetterReformMod
 {
 
-    [BepInPlugin(__GUID__, __NAME__, "1.0.1")]
+    [BepInPlugin(__GUID__, __NAME__, "1.0.2")]
     public class BetterReform : BaseUnityPlugin
     {
         public const string __NAME__ = "BetterReform";
